@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="time_slot" table="x_1843073_institut_attendance" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>time_slot</element>
+            <name>x_1843073_institut_attendance</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:17</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>time_slot</sys_name>
+            <sys_package display_value="Institute Ma" source="x_1843073_institut">afc56d1983303210ac1958a6feaad365</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Institute Ma">afc56d1983303210ac1958a6feaad365</sys_scope>
+            <sys_update_name>sys_choice_x_1843073_institut_attendance_time_slot</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:17</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>time_slot</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>8:00 AM - 9:00 AM</label>
+            <language>en</language>
+            <name>x_1843073_institut_attendance</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:17</sys_updated_on>
+            <value>8_9</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>time_slot</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>9:00 AM - 10:00 AM</label>
+            <language>en</language>
+            <name>x_1843073_institut_attendance</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:17</sys_updated_on>
+            <value>9_10</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>time_slot</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>10:00 AM - 11:00 AM</label>
+            <language>en</language>
+            <name>x_1843073_institut_attendance</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:17</sys_updated_on>
+            <value>10_11</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>time_slot</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>11:00 AM - 12:00 PM</label>
+            <language>en</language>
+            <name>x_1843073_institut_attendance</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:17</sys_updated_on>
+            <value>11_12</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>time_slot</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>12:00 PM - 1:00 PM</label>
+            <language>en</language>
+            <name>x_1843073_institut_attendance</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:17</sys_updated_on>
+            <value>12_1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>time_slot</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>1:00 PM - 2:00 PM</label>
+            <language>en</language>
+            <name>x_1843073_institut_attendance</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:17</sys_updated_on>
+            <value>1_2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>time_slot</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>2:00 PM - 3:00 PM</label>
+            <language>en</language>
+            <name>x_1843073_institut_attendance</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:17</sys_updated_on>
+            <value>2_3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>time_slot</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>3:00 PM - 4:00 PM</label>
+            <language>en</language>
+            <name>x_1843073_institut_attendance</name>
+            <sequence>7</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:17</sys_updated_on>
+            <value>3_4</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>time_slot</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>4:00 PM - 5:00 PM</label>
+            <language>en</language>
+            <name>x_1843073_institut_attendance</name>
+            <sequence>8</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:17</sys_updated_on>
+            <value>4_5</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

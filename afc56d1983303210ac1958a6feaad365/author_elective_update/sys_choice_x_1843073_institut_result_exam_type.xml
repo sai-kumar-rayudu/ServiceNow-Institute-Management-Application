@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="exam_type" table="x_1843073_institut_result" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>exam_type</element>
+            <name>x_1843073_institut_result</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:20</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>exam_type</sys_name>
+            <sys_package display_value="Institute Ma" source="x_1843073_institut">afc56d1983303210ac1958a6feaad365</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Institute Ma">afc56d1983303210ac1958a6feaad365</sys_scope>
+            <sys_update_name>sys_choice_x_1843073_institut_result_exam_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:20</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>exam_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Midterm</label>
+            <language>en</language>
+            <name>x_1843073_institut_result</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:20</sys_updated_on>
+            <value>midterm</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>exam_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Final Exam</label>
+            <language>en</language>
+            <name>x_1843073_institut_result</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:20</sys_updated_on>
+            <value>final</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>exam_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Quiz</label>
+            <language>en</language>
+            <name>x_1843073_institut_result</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:20</sys_updated_on>
+            <value>quiz</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>exam_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Assignment</label>
+            <language>en</language>
+            <name>x_1843073_institut_result</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:20</sys_updated_on>
+            <value>assignment</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>exam_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Project</label>
+            <language>en</language>
+            <name>x_1843073_institut_result</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:20</sys_updated_on>
+            <value>project</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>exam_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Presentation</label>
+            <language>en</language>
+            <name>x_1843073_institut_result</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:20</sys_updated_on>
+            <value>presentation</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>exam_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Practical</label>
+            <language>en</language>
+            <name>x_1843073_institut_result</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-10-24 05:01:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-10-24 05:01:20</sys_updated_on>
+            <value>practical</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

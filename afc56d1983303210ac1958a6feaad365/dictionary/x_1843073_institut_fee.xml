@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="6d0ea9d183703210ac1958a6feaad353" label="Fee Management" max_length="40" name="x_1843073_institut_fee" type="collection">
+        <element choice="1" default="pending" label="Payment Status" max_length="40" name="payment_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Overdue" sequence="2" value="overdue"/>
+                <element inactive_on_update="false" label="Partially Paid" sequence="3" value="partially_paid"/>
+                <element inactive_on_update="false" label="Waived" sequence="4" value="waived"/>
+                <element inactive_on_update="false" label="Pending" sequence="0" value="pending"/>
+                <element inactive_on_update="false" label="Paid" sequence="1" value="paid"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Due Date" mandatory="true" max_length="40" name="due_date" type="glide_date"/>
+        <element choice="1" label="Fee Type" mandatory="true" max_length="40" name="fee_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Tuition Fee" sequence="0" value="tuition"/>
+                <element inactive_on_update="false" label="Hostel Fee" sequence="4" value="hostel"/>
+                <element inactive_on_update="false" label="Library Fee" sequence="1" value="library"/>
+                <element inactive_on_update="false" label="Transport Fee" sequence="5" value="transport"/>
+                <element inactive_on_update="false" label="Laboratory Fee" sequence="2" value="laboratory"/>
+                <element inactive_on_update="false" label="Miscellaneous" sequence="6" value="miscellaneous"/>
+                <element inactive_on_update="false" label="Examination Fee" sequence="3" value="examination"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Receipt Number" max_length="50" name="receipt_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" display="true" label="Fee ID" mandatory="true" max_length="20" name="fee_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Academic Year" mandatory="true" max_length="20" name="academic_year" type="string"/>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element attributes="encode_utf8=false" label="Student" mandatory="true" max_length="32" name="student" reference="x_1843073_institut_student" type="reference"/>
+        <element choice="1" label="Semester" max_length="40" name="semester" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Semester 1" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Semester 5" sequence="4" value="5"/>
+                <element inactive_on_update="false" label="Semester 2" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Semester 6" sequence="5" value="6"/>
+                <element inactive_on_update="false" label="Semester 3" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="Semester 7" sequence="6" value="7"/>
+                <element inactive_on_update="false" label="Semester 4" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="Semester 8" sequence="7" value="8"/>
+            </choice>
+        </element>
+        <element choice="1" label="Payment Method" max_length="40" name="payment_method" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Cash" sequence="0" value="cash"/>
+                <element inactive_on_update="false" label="Bank Transfer" sequence="4" value="bank_transfer"/>
+                <element inactive_on_update="false" label="Check" sequence="1" value="check"/>
+                <element inactive_on_update="false" label="Online Payment" sequence="5" value="online"/>
+                <element inactive_on_update="false" label="Credit Card" sequence="2" value="credit_card"/>
+                <element inactive_on_update="false" label="Debit Card" sequence="3" value="debit_card"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Paid Date" max_length="40" name="paid_date" type="glide_date"/>
+        <element label="Amount" mandatory="true" max_length="20" name="amount" type="decimal"/>
+        <element attributes="edge_encryption_enabled=true" label="Notes" max_length="500" name="notes" type="string"/>
+        <index name="index">
+            <element name="student"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="910ea9d183703210ac1958a6feaad319" label="Student Result" max_length="40" name="x_1843073_institut_result" type="collection">
+        <element attributes="edge_encryption_enabled=true" display="true" label="Result ID" mandatory="true" max_length="20" name="result_id" type="string"/>
+        <element choice="1" label="Grade" max_length="40" name="grade" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="F" sequence="7" value="f"/>
+                <element inactive_on_update="false" label="B" sequence="3" value="b"/>
+                <element inactive_on_update="false" label="A+" sequence="0" value="a_plus"/>
+                <element inactive_on_update="false" label="C+" sequence="4" value="c_plus"/>
+                <element inactive_on_update="false" label="A" sequence="1" value="a"/>
+                <element inactive_on_update="false" label="C" sequence="5" value="c"/>
+                <element inactive_on_update="false" label="B+" sequence="2" value="b_plus"/>
+                <element inactive_on_update="false" label="D" sequence="6" value="d"/>
+            </choice>
+        </element>
+        <element label="Total Marks" mandatory="true" max_length="20" name="total_marks" type="decimal"/>
+        <element label="Result Published" max_length="40" name="published" type="boolean"/>
+        <element choice="1" label="Exam Type" mandatory="true" max_length="40" name="exam_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Presentation" sequence="5" value="presentation"/>
+                <element inactive_on_update="false" label="Final Exam" sequence="1" value="final"/>
+                <element inactive_on_update="false" label="Practical" sequence="6" value="practical"/>
+                <element inactive_on_update="false" label="Quiz" sequence="2" value="quiz"/>
+                <element inactive_on_update="false" label="Assignment" sequence="3" value="assignment"/>
+                <element inactive_on_update="false" label="Midterm" sequence="0" value="midterm"/>
+                <element inactive_on_update="false" label="Project" sequence="4" value="project"/>
+            </choice>
+        </element>
+        <element choice="1" label="Semester" max_length="40" name="semester" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Semester 4" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="Semester 8" sequence="7" value="8"/>
+                <element inactive_on_update="false" label="Semester 5" sequence="4" value="5"/>
+                <element inactive_on_update="false" label="Semester 1" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Semester 6" sequence="5" value="6"/>
+                <element inactive_on_update="false" label="Semester 2" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Semester 7" sequence="6" value="7"/>
+                <element inactive_on_update="false" label="Semester 3" sequence="2" value="3"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Subject/Course" mandatory="true" max_length="100" name="subject" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Result Date" max_length="40" name="result_date" type="glide_date"/>
+        <element attributes="encode_utf8=false" label="Instructor" max_length="32" name="instructor" reference="x_1843073_institut_staff" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Academic Year" mandatory="true" max_length="20" name="academic_year" type="string"/>
+        <element attributes="encode_utf8=false" label="Student" mandatory="true" max_length="32" name="student" reference="x_1843073_institut_student" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Exam Date" mandatory="true" max_length="40" name="exam_date" type="glide_date"/>
+        <element label="Percentage" max_length="20" name="percentage" type="decimal"/>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Marks Obtained" mandatory="true" max_length="20" name="marks_obtained" type="decimal"/>
+        <element attributes="edge_encryption_enabled=true" label="Comments" max_length="500" name="comments" type="string"/>
+        <index name="index">
+            <element name="instructor"/>
+        </index>
+        <index name="index2">
+            <element name="student"/>
+        </index>
+    </element>
+</database>

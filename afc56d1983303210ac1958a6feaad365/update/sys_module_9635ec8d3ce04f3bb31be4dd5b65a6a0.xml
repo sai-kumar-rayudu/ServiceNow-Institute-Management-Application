@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_module">
+    <sys_module action="INSERT_OR_UPDATE">
+        <content><![CDATA[import { gs, GlideDateTime } from '@servicenow/glide'
+
+// Calculate percentage and determine grade based on marks
+export function calculateGradeAndPercentage(current, previous) {
+    const marksObtained = parseFloat(current.getValue('marks_obtained') || 0);
+    const totalMarks = parseFloat(current.getValue('total_marks') || 0);
+    
+    if (totalMarks > 0) {
+        const percentage = (marksObtained / totalMarks) * 100;
+        current.setValue('percentage', percentage.toFixed(2));
+        
+        // Assign grade based on percentage
+        let grade = 'f';
+        if (percentage >= 95) grade = 'a_plus';
+        else if (percentage >= 85) grade = 'a';
+        else if (percentage >= 75) grade = 'b_plus';
+        else if (percentage >= 65) grade = 'b';
+        else if (percentage >= 55) grade = 'c_plus';
+        else if (percentage >= 45) grade = 'c';
+        else if (percentage >= 35) grade = 'd';
+        
+        current.setValue('grade', grade);
+        
+        gs.addInfoMessage(`Grade calculated: ${grade.toUpperCase().replace('_', '')} (${percentage.toFixed(2)}%)`);
+    }
+}
+
+// Send notification when result is published
+export function notifyResultPublished(current, previous) {
+    if (current.getValue('published') == 'true' && previous.getValue('published') != 'true') {
+        gs.addInfoMessage('Result has been published. Students will be notified.');
+        
+        // Log the published result
+        gs.info(`Result published for student: ${current.student.student_id} - Subject: ${current.getValue('subject')}`);
+    }
+}
+
+// Update fee status based on due date
+export function updateFeeStatus(current, previous) {
+    const today = new GlideDateTime();
+    const dueDate = new GlideDateTime(current.getValue('due_date'));
+    
+    if (current.getValue('payment_status') == 'pending' && today.after(dueDate)) {
+        current.setValue('payment_status', 'overdue');
+        gs.addInfoMessage('Fee status updated to overdue');
+    }
+}
+
+// Generate automatic attendance ID
+export function generateAttendanceId(current, previous) {
+    if (!current.getValue('attendance_id')) {
+        const today = new GlideDateTime();
+        const dateStr = today.getDisplayValue().substring(0, 10).replace(/-/g, '');
+        const randomNum = Math.floor(Math.random() * 9999).toString().padStart(4, '0');
+        const attendanceId = `ATT${dateStr}${randomNum}`;
+        current.setValue('attendance_id', attendanceId);
+    }
+}
+
+// Send period alert notification
+export function sendPeriodAlert(current, previous) {
+    const now = new GlideDateTime();
+    const scheduledTime = new GlideDateTime(current.getValue('scheduled_date'));
+    const fifteenMinutesBefore = new GlideDateTime(scheduledTime);
+    fifteenMinutesBefore.addSeconds(-900); // 15 minutes before
+    
+    if (current.getValue('notification_type') == 'period_alert' && 
+        current.getValue('sent') != 'true' &&
+        now.after(fifteenMinutesBefore) && 
+        now.before(scheduledTime)) {
+        
+        current.setValue('sent', true);
+        current.setValue('sent_date', now.getDisplayValue());
+        gs.addInfoMessage('Period alert notification sent');
+    }
+}]]></content>
+        <external_source>false</external_source>
+        <path>x_1843073_institut/x-1843073-institute-ma/1.0.0/src/server/notification-handlers.js</path>
+        <sys_class_name>sys_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-24 05:01:22</sys_created_on>
+        <sys_id>9635ec8d3ce04f3bb31be4dd5b65a6a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1843073_institut/x-1843073-institute-ma/1.0.0/src/server/notification-handlers.js</sys_name>
+        <sys_package display_value="Institute Ma" source="x_1843073_institut">afc56d1983303210ac1958a6feaad365</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Institute Ma">afc56d1983303210ac1958a6feaad365</sys_scope>
+        <sys_update_name>sys_module_9635ec8d3ce04f3bb31be4dd5b65a6a0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-24 05:01:22</sys_updated_on>
+    </sys_module>
+</record_update>

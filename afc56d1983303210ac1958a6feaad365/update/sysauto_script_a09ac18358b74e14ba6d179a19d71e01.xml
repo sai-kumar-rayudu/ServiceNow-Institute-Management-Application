@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_run_end/>
+        <entered_run_start/>
+        <entered_time/>
+        <max_drift/>
+        <name>Daily Notification Processor</name>
+        <offset/>
+        <offset_type/>
+        <repeat_every/>
+        <run_as/>
+        <run_as_tz/>
+        <run_dayofmonth/>
+        <run_dayofweek/>
+        <run_daysofweek/>
+        <run_end/>
+        <run_month/>
+        <run_period/>
+        <run_start/>
+        <run_time>2025-10-24 05:51:08</run_time>
+        <run_type>daily</run_type>
+        <run_weekinmonth/>
+        <script><![CDATA[
+        // Process pending notifications and fee reminders
+        var notificationGR = new GlideRecord('x_1843073_institut_notification');
+        notificationGR.addQuery('sent', false);
+        notificationGR.addQuery('active', true);
+        notificationGR.addNullQuery('scheduled_date').addOrCondition('scheduled_date', '<=', gs.nowDateTime());
+        notificationGR.query();
+        
+        var notificationCount = 0;
+        while (notificationGR.next()) {
+            // Mark as sent
+            notificationGR.setValue('sent', true);
+            notificationGR.setValue('sent_date', gs.nowDateTime());
+            notificationGR.update();
+            notificationCount++;
+        }
+        
+        // Check for overdue fees and create notifications
+        var feeGR = new GlideRecord('x_1843073_institut_fee');
+        feeGR.addQuery('payment_status', 'pending');
+        feeGR.addQuery('due_date', '<', gs.nowDate());
+        feeGR.query();
+        
+        var overdueCount = 0;
+        while (feeGR.next()) {
+            // Update fee status to overdue
+            feeGR.setValue('payment_status', 'overdue');
+            feeGR.update();
+            overdueCount++;
+            
+            // Create overdue fee notification
+            var notif = new GlideRecord('x_1843073_institut_notification');
+            notif.initialize();
+            notif.setValue('title', 'Fee Overdue - ' + feeGR.fee_type.getDisplayValue());
+            notif.setValue('message', 'Your ' + feeGR.fee_type.getDisplayValue() + ' of $' + feeGR.getValue('amount') + ' is overdue. Please make payment immediately.');
+            notif.setValue('notification_type', 'fee_reminder');
+            notif.setValue('priority', 'high');
+            notif.setValue('target_audience', 'specific_year');
+            notif.setValue('active', true);
+            notif.insert();
+        }
+        
+        gs.info('Daily notification processing completed. Processed: ' + notificationCount + ' notifications, ' + overdueCount + ' overdue fees');
+        ]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-24 05:01:23</sys_created_on>
+        <sys_id>a09ac18358b74e14ba6d179a19d71e01</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Daily Notification Processor</sys_name>
+        <sys_package display_value="Institute Ma" source="x_1843073_institut">afc56d1983303210ac1958a6feaad365</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Institute Ma">afc56d1983303210ac1958a6feaad365</sys_scope>
+        <sys_update_name>sysauto_script_a09ac18358b74e14ba6d179a19d71e01</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-24 05:01:23</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>
