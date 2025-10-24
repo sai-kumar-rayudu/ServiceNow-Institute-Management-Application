@@ -21,14 +21,6 @@ A comprehensive ServiceNow application for managing educational institutions wit
 - **JavaScript/TypeScript** for business logic
 - **CSS3** for styling and responsive design
 
-## Installation
-
-1. Clone the repository
-2. Install ServiceNow SDK
-3. Run `npm install` to install dependencies
-4. Build with `now-sdk build`
-5. Deploy with `now-sdk install`
-
 ## Project Structure
 src/
 ├── fluent/ # ServiceNow metadata definitions
