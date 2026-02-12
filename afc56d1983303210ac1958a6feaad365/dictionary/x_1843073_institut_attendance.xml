@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="e40ee15183303210ac1958a6feaad33c" label="Attendance" max_length="40" name="x_1843073_institut_attendance" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Remarks" max_length="500" name="remarks" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Check-in Time" max_length="40" name="check_in_time" type="glide_date_time"/>
+        <element choice="1" label="Semester" max_length="40" name="semester" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Semester 1" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Semester 5" sequence="4" value="5"/>
+                <element inactive_on_update="false" label="Semester 2" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Semester 6" sequence="5" value="6"/>
+                <element inactive_on_update="false" label="Semester 3" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="Semester 7" sequence="6" value="7"/>
+                <element inactive_on_update="false" label="Semester 4" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="Semester 8" sequence="7" value="8"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Subject/Course" mandatory="true" max_length="100" name="subject" type="string"/>
+        <element choice="1" default="present" label="Attendance Status" mandatory="true" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Present" sequence="0" value="present"/>
+                <element inactive_on_update="false" label="Absent" sequence="1" value="absent"/>
+                <element inactive_on_update="false" label="Late" sequence="2" value="late"/>
+                <element inactive_on_update="false" label="Excused" sequence="3" value="excused"/>
+            </choice>
+        </element>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Academic Year" mandatory="true" max_length="20" name="academic_year" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Check-out Time" max_length="40" name="check_out_time" type="glide_date_time"/>
+        <element attributes="encode_utf8=false" label="Student" mandatory="true" max_length="32" name="student" reference="x_1843073_institut_student" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" display="true" label="Attendance ID" mandatory="true" max_length="20" name="attendance_id" type="string"/>
+        <element choice="1" label="Time Slot" max_length="40" name="time_slot" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="9:00 AM - 10:00 AM" sequence="1" value="9_10"/>
+                <element inactive_on_update="false" label="1:00 PM - 2:00 PM" sequence="5" value="1_2"/>
+                <element inactive_on_update="false" label="10:00 AM - 11:00 AM" sequence="2" value="10_11"/>
+                <element inactive_on_update="false" label="2:00 PM - 3:00 PM" sequence="6" value="2_3"/>
+                <element inactive_on_update="false" label="11:00 AM - 12:00 PM" sequence="3" value="11_12"/>
+                <element inactive_on_update="false" label="3:00 PM - 4:00 PM" sequence="7" value="3_4"/>
+                <element inactive_on_update="false" label="8:00 AM - 9:00 AM" sequence="0" value="8_9"/>
+                <element inactive_on_update="false" label="12:00 PM - 1:00 PM" sequence="4" value="12_1"/>
+                <element inactive_on_update="false" label="4:00 PM - 5:00 PM" sequence="8" value="4_5"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" label="Instructor" max_length="32" name="instructor" reference="x_1843073_institut_staff" type="reference"/>
+        <index name="index">
+            <element name="instructor"/>
+        </index>
+        <index name="index2">
+            <element name="student"/>
+        </index>
+    </element>
+</database>

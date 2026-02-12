@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="d90e69d183703210ac1958a6feaad3c8" label="Notifications" max_length="40" name="x_1843073_institut_notification" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Course Filter" max_length="100" name="course_filter" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="0" label="Read Count" max_length="10" name="read_count" type="string"/>
+        <element choice="1" default="medium" label="Priority" max_length="40" name="priority" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="High" sequence="2" value="high"/>
+                <element inactive_on_update="false" label="Critical" sequence="3" value="critical"/>
+                <element inactive_on_update="false" label="Low" sequence="0" value="low"/>
+                <element inactive_on_update="false" label="Medium" sequence="1" value="medium"/>
+            </choice>
+        </element>
+        <element label="Sent" max_length="40" name="sent" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Message" mandatory="true" max_length="1000" name="message" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Scheduled Date" max_length="40" name="scheduled_date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Notification ID" mandatory="true" max_length="20" name="notification_id" type="string"/>
+        <element attributes="encode_utf8=false" label="Created By" max_length="32" name="created_by" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" display="true" label="Title" mandatory="true" max_length="200" name="title" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:gs.nowDateTime()" label="Created Date" max_length="40" name="created_date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Year Filter" max_length="10" name="year_filter" type="string"/>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element choice="1" default="all_students" label="Target Audience" max_length="40" name="target_audience" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Specific Course" sequence="2" value="specific_course"/>
+                <element inactive_on_update="false" label="Staff" sequence="3" value="staff"/>
+                <element inactive_on_update="false" label="All Students" sequence="0" value="all_students"/>
+                <element inactive_on_update="false" label="All Users" sequence="4" value="all"/>
+                <element inactive_on_update="false" label="Specific Year" sequence="1" value="specific_year"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Sent Date" max_length="40" name="sent_date" type="glide_date_time"/>
+        <element choice="1" label="Notification Type" mandatory="true" max_length="40" name="notification_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Fee Reminder" sequence="2" value="fee_reminder"/>
+                <element inactive_on_update="false" label="Exam Alert" sequence="3" value="exam_alert"/>
+                <element inactive_on_update="false" label="Event" sequence="0" value="event"/>
+                <element inactive_on_update="false" label="General Announcement" sequence="4" value="general"/>
+                <element inactive_on_update="false" label="Period Alert" sequence="1" value="period_alert"/>
+                <element inactive_on_update="false" label="Emergency" sequence="5" value="emergency"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Expiry Date" max_length="40" name="expiry_date" type="glide_date_time"/>
+        <index name="index">
+            <element name="created_by"/>
+        </index>
+    </element>
+</database>

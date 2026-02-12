@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="780e69d183703210ac1958a6feaad329" label="Staff" max_length="40" name="x_1843073_institut_staff" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Phone Number" max_length="20" name="phone" type="string"/>
+        <element choice="1" default="active" label="Employment Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Terminated" sequence="2" value="terminated"/>
+                <element inactive_on_update="false" label="Retired" sequence="3" value="retired"/>
+                <element inactive_on_update="false" label="Active" sequence="0" value="active"/>
+                <element inactive_on_update="false" label="On Leave" sequence="1" value="on_leave"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Last Name" mandatory="true" max_length="50" name="last_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Specialization" max_length="200" name="specialization" type="string"/>
+        <element attributes="edge_encryption_enabled=true" display="true" label="Staff ID" mandatory="true" max_length="20" name="staff_id" type="string"/>
+        <element label="Salary" max_length="10" name="salary" type="decimal"/>
+        <element choice="1" label="Position" max_length="40" name="position" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Professor" sequence="0" value="professor"/>
+                <element inactive_on_update="false" label="Teaching Assistant" sequence="4" value="teaching_assistant"/>
+                <element inactive_on_update="false" label="Associate Professor" sequence="1" value="associate_professor"/>
+                <element inactive_on_update="false" label="Administrator" sequence="5" value="administrator"/>
+                <element inactive_on_update="false" label="Assistant Professor" sequence="2" value="assistant_professor"/>
+                <element inactive_on_update="false" label="Support Staff" sequence="6" value="support_staff"/>
+                <element inactive_on_update="false" label="Lecturer" sequence="3" value="lecturer"/>
+            </choice>
+        </element>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Hire Date" mandatory="true" max_length="40" name="hire_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Department" mandatory="true" max_length="100" name="department" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Address" max_length="500" name="address" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Email" mandatory="true" max_length="100" name="email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Years of Experience" max_length="2" name="experience_years" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="First Name" mandatory="true" max_length="50" name="first_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Qualification" max_length="200" name="qualification" type="string"/>
+    </element>
+</database>

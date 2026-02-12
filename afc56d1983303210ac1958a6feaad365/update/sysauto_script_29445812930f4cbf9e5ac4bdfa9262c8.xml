@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_run_end/>
+        <entered_run_start/>
+        <entered_time/>
+        <max_drift/>
+        <name>Weekly Report Generator</name>
+        <offset/>
+        <offset_type/>
+        <repeat_every/>
+        <run_as/>
+        <run_as_tz/>
+        <run_dayofmonth/>
+        <run_dayofweek>1</run_dayofweek>
+        <run_daysofweek/>
+        <run_end/>
+        <run_month/>
+        <run_period/>
+        <run_start/>
+        <run_time>2025-10-24 05:51:08</run_time>
+        <run_type>weekly</run_type>
+        <run_weekinmonth/>
+        <script><![CDATA[
+        // Generate weekly attendance summary
+        var startDate = new GlideDateTime();
+        startDate.addDaysLocalTime(-7);
+        
+        var attendanceGR = new GlideRecord('x_1843073_institut_attendance');
+        attendanceGR.addQuery('date', '>=', startDate.getDisplayValue());
+        attendanceGR.query();
+        
+        var totalClasses = 0;
+        var presentCount = 0;
+        
+        while (attendanceGR.next()) {
+            totalClasses++;
+            if (attendanceGR.getValue('status') == 'present') {
+                presentCount++;
+            }
+        }
+        
+        var attendanceRate = totalClasses > 0 ? ((presentCount / totalClasses) * 100).toFixed(2) : 0;
+        
+        // Create weekly summary notification
+        var weeklyNotif = new GlideRecord('x_1843073_institut_notification');
+        weeklyNotif.initialize();
+        weeklyNotif.setValue('title', 'Weekly Attendance Summary');
+        weeklyNotif.setValue('message', 'This week attendance rate: ' + attendanceRate + '%. Total classes: ' + totalClasses + ', Present: ' + presentCount);
+        weeklyNotif.setValue('notification_type', 'general');
+        weeklyNotif.setValue('priority', 'medium');
+        weeklyNotif.setValue('target_audience', 'all');
+        weeklyNotif.setValue('active', true);
+        weeklyNotif.insert();
+        
+        gs.info('Weekly report generated - Attendance Rate: ' + attendanceRate + '%');
+        ]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-24 05:01:23</sys_created_on>
+        <sys_id>29445812930f4cbf9e5ac4bdfa9262c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Weekly Report Generator</sys_name>
+        <sys_package display_value="Institute Ma" source="x_1843073_institut">afc56d1983303210ac1958a6feaad365</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Institute Ma">afc56d1983303210ac1958a6feaad365</sys_scope>
+        <sys_update_name>sysauto_script_29445812930f4cbf9e5ac4bdfa9262c8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-24 05:01:23</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

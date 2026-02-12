@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="cd0e69d183703210ac1958a6feaad373" label="Student" max_length="40" name="x_1843073_institut_student" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Address" max_length="500" name="address" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Phone Number" max_length="20" name="phone" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Guardian Phone" max_length="20" name="guardian_phone" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Last Name" mandatory="true" max_length="50" name="last_name" type="string"/>
+        <element choice="1" default="active" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Suspended" sequence="3" value="suspended"/>
+                <element inactive_on_update="false" label="Active" sequence="0" value="active"/>
+                <element inactive_on_update="false" label="Inactive" sequence="1" value="inactive"/>
+                <element inactive_on_update="false" label="Graduated" sequence="2" value="graduated"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" display="true" label="Student ID" mandatory="true" max_length="20" name="student_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Course/Program" mandatory="true" max_length="100" name="course" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="First Name" mandatory="true" max_length="50" name="first_name" type="string"/>
+        <element choice="1" label="Academic Year" max_length="40" name="year" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Second Year" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Third Year" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="Fourth Year" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="First Year" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Graduate" sequence="4" value="graduate"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Enrollment Date" mandatory="true" max_length="40" name="enrollment_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Date of Birth" max_length="40" name="date_of_birth" type="glide_date"/>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Email" mandatory="true" max_length="100" name="email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Guardian Name" max_length="100" name="guardian_name" type="string"/>
+    </element>
+</database>
